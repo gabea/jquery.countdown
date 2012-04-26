@@ -52,6 +52,11 @@
                     options.complete(self, startTime, endTime);
                 }
             }, options.duration);   
+            
+            // Bind to a countdown.stop event to allow the timer to be stopped.
+            $(self).bind('countdown.stop', function(e) {
+                window.clearInterval(intervalID);
+            });
         });
     };
 })(jQuery);
