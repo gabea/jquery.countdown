@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>jQuery Countdown Plugin</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.countdown.js"></script>
+</head>
+<body>
+    <div id="content">
+    <h1>Counting down to awesomeness: <span id="countdown"></span></h1>
+    </div>
+    <script>
+        $('#countdown').countdown({
+            startNumber: 10,
+            complete: function(e, st, et) {
+                $('#content').append('<span style="font-weight:bold;font-size:25px;">WooHoo, we started at ' + st + ' ms and complete was called at ' + et + ' ms.</span>')
+            }
+        });
+    </script>
+</body>
+</html>
